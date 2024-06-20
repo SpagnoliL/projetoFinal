@@ -1,13 +1,13 @@
-package com.example.maratona;
+package org.example.lucasfinal;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class MaratonaApplicationTests {
+class LucasFinalApplicationTests {
 
-	@Test
-	void contextLoads() {
-	}
+    @Test
+    void contextLoads() {
+    }
 
 }
