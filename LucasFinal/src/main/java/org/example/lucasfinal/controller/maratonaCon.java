@@ -32,6 +32,6 @@ public class maratonaCon {
     @DeleteMapping("/deletar")
     public String deleteMaratona (@RequestParam long id){
         maratonaService.deleteMaratona(id);
-        return "Time deletado com sucesso!";
+        return "Maratonista deletado com sucesso!";
     }
 }
