@@ -18,9 +18,11 @@ public class maratonistaSer {
     public maratonista cadastrarMaratonista(maratonista Maratonista) {
         return maratonistaRepository.save(Maratonista);
     }
-    public List<maratonista> listaMaratonistas(){
+
+    public List<maratonista> listaMaratonistas() {
         return maratonistaRepository.findAll();
     }
+
     public maratonista updateMaratonista(maratonista Maratonista) {
         return maratonistaRepository.save(Maratonista);
     }

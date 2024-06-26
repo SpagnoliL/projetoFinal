@@ -14,11 +14,13 @@ public class maratonaSer {
     maratonaRep maratonaRepository;
 
     public maratona cadastrarMaratona(maratona Maratona) {
-            return maratonaRepository.save(Maratona);
+        return maratonaRepository.save(Maratona);
     }
-    public List<maratona> listaMaratonas(){
+
+    public List<maratona> listaMaratonas() {
         return maratonaRepository.findAll();
     }
+
     public maratona updateMaratona(maratona Maratona) {
         return maratonaRepository.save(Maratona);
     }
