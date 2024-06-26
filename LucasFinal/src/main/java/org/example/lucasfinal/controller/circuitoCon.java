@@ -15,8 +15,13 @@ public class circuitoCon {
     circuitoSer circuitoService;
     @PostMapping("/cadastrar")
     public String CadastrarCircuito(@RequestBody @Valid circuito Circuito) {
-        circuitoService.cadastrarCircuito(Circuito);
-        return "Circuito cadastrado com sucesso";
+        String posicaoOf = Circuito.getCategoria();
+        if (posicaoOf.equalsIgnoreCase("Pequeno") || posicaoOf.equalsIgnoreCase("Médio") || posicaoOf.equalsIgnoreCase("Avançado")) {
+            circuitoService.cadastrarCircuito(Circuito);
+            return "Circuito cadastrado com sucesso";
+        } else {
+            return "Circuito precisa ser 'pequeno', 'médio' ou 'avançado'";
+        }
     }
     @JsonIgnoreProperties
     @GetMapping("/circuitos")

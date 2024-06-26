@@ -58,6 +58,50 @@ public class inscricaoSer {
 
 
 
+    public String cadastrarInscricao(inscricao Inscricao, maratonista Maratonista, circuito Circuito) {
+
+
+
+
+
+
+
+
+
+
+    if (Circuito.getCategoria().equalsIgnoreCase("Pequeno")){
+   if (Maratonista.getIdade()>=18){
+       if (Inscricao.getValorPrecisao() == 1500){
+           return ""+inscricaoRepository.save(Inscricao);
+       } else if (Inscricao.getValorPrecisao() != 1500){
+           return "Preço merrequento";
+       }
+       } else if (Maratonista.getIdade()<18) {
+       if (Inscricao.getValorPrecisao() == 1300){
+           return ""+inscricaoRepository.save(Inscricao);
+       } else if (Inscricao.getValorPrecisao() != 1300){
+           return "Preço merrequento";
+       }
+   }
+    }
+        if (Circuito.getCategoria().equalsIgnoreCase("Médio")){
+            if (Maratonista.getIdade()>=18){
+                if (Inscricao.getValorPrecisao() == 2300){
+                    return ""+inscricaoRepository.save(Inscricao);
+                } else if (Inscricao.getValorPrecisao() != 2300){
+                    return "Preço merrequento";
+                }
+            } else if (Maratonista.getIdade()<18) {
+                if (Inscricao.getValorPrecisao() == 2000){
+                    return ""+inscricaoRepository.save(Inscricao);
+                } else if (Inscricao.getValorPrecisao() != 2000){
+                    return "Preço merrequento";
+                }
+            }
+        }
+
+    return "abubublé";
+    }
     public List<inscricao> listaInscricoes(){
         return inscricaoRepository.findAll();
     }
