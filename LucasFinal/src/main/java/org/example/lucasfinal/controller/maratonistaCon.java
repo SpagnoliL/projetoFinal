@@ -10,27 +10,31 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("maratona")
+@RequestMapping("maratonista")
 public class maratonistaCon {
     @Autowired
     maratonistaSer maratonistaService;
+
     @PostMapping("/cadastrar")
     public String CadastrarMaratonista(@RequestBody @Valid maratonista Maratonista) {
         maratonistaService.cadastrarMaratonista(Maratonista);
         return "Maratonista cadastrado com sucesso";
     }
+
     @JsonIgnoreProperties
     @GetMapping("/maratonista")
     public List<maratonista> listaMaratonistas() {
         return maratonistaService.listaMaratonistas();
     }
+
     @JsonIgnoreProperties
     @PutMapping("/editar")
     public maratonista updateMaratonista(@RequestBody maratonista Maratonista) {
         return maratonistaService.updateMaratonista(Maratonista);
     }
+
     @DeleteMapping("/deletar")
-    public String deleteMaratonista (@RequestParam long id){
+    public String deleteMaratonista(@RequestParam long id) {
         maratonistaService.deleteMaratonista(id);
         return "Maratonista deletado com sucesso!";
     }

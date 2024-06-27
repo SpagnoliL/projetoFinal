@@ -15,9 +15,11 @@ public class circuitoSer {
     public circuito cadastrarCircuito(circuito Circuito) {
         return circuitoRepository.save(Circuito);
     }
-    public List<circuito> listaCircuitos(){
+
+    public List<circuito> listaCircuitos() {
         return circuitoRepository.findAll();
     }
+
     public circuito updateCircuito(circuito Circuito) {
         return circuitoRepository.save(Circuito);
     }
